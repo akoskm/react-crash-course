@@ -46,6 +46,6 @@ Because you already know a little bit of JSX, I'll let you think a function that
 
 ## Exercise
 
-Now let's get our hands dirty and open index.html.
+Now let's get our hands dirty and open [0_practice.html](0_practice.html).
 
 You'll find the instructions inside!

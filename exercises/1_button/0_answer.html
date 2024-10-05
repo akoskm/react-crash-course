@@ -23,7 +23,10 @@
       <script type="text/babel">
           function SaveButton() {
               return (
-                  <button onClick={() => alert('Button clicked!')}>
+                  // 👷 Great work! Now let's open 1_practice.html
+                  <button onClick={(event) => {
+                    alert('Button clicked!');
+                  }}>
                       Save
                   </button>
               );
