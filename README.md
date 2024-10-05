@@ -21,6 +21,18 @@ So I wanted to create a course that gives you the necessary knowledge, without t
  - get working on a React codebase in your company, even if you never used React before
  - learn the basics of React and build up on this knowledge to increase your skillset and worth
 
+## Who is this course for?
+
+This course is for people who are interested in Web Technologies, want to build fast web apps with the most popular UI library.
+
+### Required Knowledge
+ - Basic HTML
+ - Basic JavaScript
+
+## Who is this course not for
+
+People who already know the basics of React, like handling events, using state, props and basic hooks.
+
 ## Isn't react.dev enough?
 
 React has an amazing documentation–I use it more often than you think.
@@ -32,3 +44,7 @@ But if you need to learn React just to be able to contribute to a codebase or re
 All of these UIs contain text inputs, comboboxes, dropdowns and shared components, and while react.dev describes their APIs, it's more like a documentation of what they are capable of and not a walkthrough of how they are used in the app you'll work on.
 
 This course, unlike react.dev, offers you **a structured way** to learn **how to use** these components and **how to combine** them for a more complex UI.
+
+## Emojy guide:
+
+💭 - we already mentioned this, try to remember
