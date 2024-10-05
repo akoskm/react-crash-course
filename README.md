@@ -1,10 +1,13 @@
 # Motivation
 
-You often read online, "just make a project". While I'm a big believer of learning by doing, "just making a project" can take anywhere from days to weeks.
+The "just make a project" advice is common, but it can take days to weeks to execute.
+
+Why?
 
 The React ecosystem is *vast*.
 
 Should I go with Remix, Next.js or maybe Astro, or just stick to Create React App?
+
 Should I use a UI library like daisyUI, or maybe TailwindCSS.
 
 You can spend a ton of time to pick the best tools, **without** actually building anything.
