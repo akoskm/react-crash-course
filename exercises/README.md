@@ -20,7 +20,7 @@ You know what's cool about starting with a todo app? You already know what you'l
 
 And the best part?
 
-While you're implementing features you understand, you get to focus on what really matters - **understanding React**.
+While you're implementing these features you're already familiar with you **exercise your React muscles**. 💪
 
 Welcome to the course where your React journey begins with something simple but complete.
 
