@@ -69,4 +69,4 @@ A handful of emojis will guide you through this journey! Whenever you see one of
 
 ⚠️ - common mistakes
 
-💡 - best practices and recommendations
+💡 - helpful information, best practices, recommendations
