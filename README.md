@@ -1,3 +1,5 @@
+# Start here 👉 [exercises](exercises)
+
 # Motivation
 
 The "just make a project" advice is common, but it can take days to weeks to execute.
