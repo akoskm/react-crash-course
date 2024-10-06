@@ -10,7 +10,7 @@ How React achieves this?
 
 The greatest thing about React is that it looks familiar.
 
-```
+```jsx
 <button>Save</button>
 ```
 
@@ -32,7 +32,7 @@ Because you already know a little bit of JSX, I'll let you think a function that
 
 <details>
 
-  ```
+  ```jsx
   function SaveButton () {
     return <button>Save</button>
   }

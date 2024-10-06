@@ -18,7 +18,7 @@ How a React component would look like for a form input that contains the label "
 
 <details>
 
-  ```
+  ```jsx
   function FormInput () {
     return (
       <label>

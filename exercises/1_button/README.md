@@ -38,6 +38,8 @@ Now make your save button show an alert to the user. You can use `alert('Button 
   <summary>Show me the answer!</summary>
 </details>
 
+# Exercise
+
 Now let's take this a step further by observing the even object that gets into this function.
 
 Open [0_practice.html](0_practice.html).
