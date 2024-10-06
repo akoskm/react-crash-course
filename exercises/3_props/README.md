@@ -1,0 +1,81 @@
+# Props
+
+React's mechanism to pass data from parent to child components.
+
+# Why it matters?
+
+Imagine how crazy it would be to build a car from scratch every time you want to go to the town.
+
+Not as complicated as building a car, it'd still take time to copy and paste and add small changes to a piece of code you want to reuse in your app.
+
+The `FormInput` component we created during our previous practice is a great example of this. Let's see how we can use props to reuse the FormInput for a "Task name" and a "Task priority" input.
+
+# A Reusable Form Input component
+
+The syntax for passing props to components looks like this:
+
+```jsx
+<FormInput propName=propValue>
+```
+
+Above, we're passing `propValue` to the `FormInput` component inside the variable `propName`. using the JSX syntax.
+In React every component’s input parameter is an object containing all props that have been passed to that particular component.
+So inside the `FormInput` component, you can access `propName` as a variable:
+
+```jsx
+function Form(props) {
+    // access props.propName
+    return (
+        <>
+          <FormInput />
+          <SaveButton />
+        </>
+    );
+}
+```
+
+But what you'll see most often is destructuring the `props` object immediately:
+```jsx
+function Form({ propName }) {
+    // use as propName
+    return (
+        <>
+          <FormInput />
+          <SaveButton />
+        </>
+    );
+}
+```
+
+## Using values inside JSX
+
+Whenever you want to use the value of the property you passed you'll use the `{propName}` syntax in JSX. So for example, if you component accepts a `buttonName` prop, you can use it in JSX like this:
+
+```jsx
+<button>{buttonName}</button>
+```
+
+# Quiz
+
+How would you modify the FormInput component so that the label is dynamic and it can be set with the help of the `labelText` property?
+
+<details>
+
+  ```jsx
+  function FormInput ({ labelText }) {
+    return (
+      <label>
+        {labelText}
+        <input type="text">
+      </label>
+    );
+  }
+  ```
+  <summary>Show me the answer!</summary>
+</details>
+
+# Exercise
+
+Let’s modify the `FormInput` component and update the `Form` component so we have two separate inputs: "Task name" and "Task priority".
+
+Open [0_practice.html](0_practice.html).
