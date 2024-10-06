@@ -21,7 +21,7 @@ Besides JSX, Composition and Props, hooks are another set of features of React. 
 To define a state variable that initially holds an empty string, you’d write this inside your component:
 
 ```jsx
-const [text, setText] = useState('');
+const [text, setText] = React.useState('');
 ```
 
 Calling the useState hook returns an array with two members:
@@ -48,7 +48,7 @@ Knowing the structure of a state that can track the value of `text`, how would y
 
   ```jsx
   function FormInput ({ labelText }) {
-    const [text, setText] = useState('');
+    const [text, setText] = React.useState('');
 
     return (
       <label>
@@ -80,7 +80,7 @@ To make the input inside `FormInput`, we only have to control the value using ou
 
 ```jsx
 function FormInput ({ labelText }) {
-  const [text, setText] = useState('');
+  const [text, setText] = React.useState('');
 
   return (
     <label>
@@ -96,6 +96,6 @@ function FormInput ({ labelText }) {
 
 # Exercise
 
-Let’s modify the `FormInput` component and update the `Form` component so we have two separate inputs: "Task name" and "Task priority".
+Let’s modify the `FormInput` component so that it displays the text the user entered below the input field.
 
 Open [0_practice.html](0_practice.html).
