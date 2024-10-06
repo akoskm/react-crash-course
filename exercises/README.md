@@ -26,4 +26,4 @@ Welcome to the course where your React journey begins with something simple but 
 
 Let's build something together!
 
-# Start the first chapter [0_about_react](0_about_react)
+# [Start the first chapter](0_about_react)
