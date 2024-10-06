@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Simple React Button with JSX</title>
+      <!-- ☕️
+        In this example, React is loaded directly from a CDN using script tags.
+        This approach is used for simplicity in this course, but in a real-world project,
+        you would typically install React and its dependencies using npm or yarn.
+      -->
+      <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <!-- EOF ☕️ -->
+  </head>
+  <body>
+      <!-- ☕️
+      Yep, it's an empty div in the beginning.
+      React renders everything it produces inside this div.
+      This is similar to what happens in real-world projects.
+      -->
+      <div id="root"></div>
+
+      <script type="text/babel">
+          function FormInput() {
+            return (
+              <label>
+                Task name
+                <input type="text"/>
+              </label>
+            )
+          }
+
+          function SaveButton() {
+              return (
+                  <button onClick={(event) => {
+                    alert(`${event.target.type} Button clicked!`);
+                  }}>
+                      Save
+                  </button>
+              );
+          }
+
+          // 👷 Create a Form component, using FormInput and Save button
+          // 💭 React components must return a valid React element.
+          // ⚠️ If you want to return multiple elements, they must be wrapped in an enclosing tag
+          // like a <div></div> or a JSX fragment <></>
+
+          // ☕️ this where React produces your component
+          // 👷 Right now, the application renders the SaveButton.
+          // Once you create your form component, make sure that's what you render with React.
+          ReactDOM.render(<SaveButton />, document.getElementById('root'));
+      </script>
+  </body>
+</html>
