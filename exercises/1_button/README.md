@@ -2,11 +2,11 @@
 
 In this exercise you'll learn how to handle events with React.
 
-## Why it matters?
+# Why it matters?
 
 Interactive elements are the at heart of every web-application. Activating a button can start network requests, show or hide different parts of the UI.
 
-## Button Component
+# The Button Component
 We already talked about how JSX looks like HTML.
 
 This similarity doesn't end at tag names, like `<button>`, but extends to attributes as well.
@@ -22,7 +22,7 @@ The standard HTML button inherits the global attributes of HTML elements, includ
   <summary>Reveal the answer!</summary>
 </details>
 
-## Quiz
+# Quiz
 
 `onClick`, similar to the HTML button’s `onclick` receives a function. When the button is clicked the function runs.
 

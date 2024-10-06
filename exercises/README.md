@@ -16,7 +16,7 @@ However, I want to **give you confidence in the basics**: handling events, using
 
 A Todo app, of course, but hear me out...
 
-You know what's cool about starting with a todo app? You already know what you'll have in the end. No confusing requirements, no wondering if you're doing it right - just you, turning your React knowledge into something familiar. Every component you create, every state update you handle, it's all going to click because, I think we as humanity can all agree on what an "Add Task" button should do.
+You know what's cool about starting with a Todo app? You already know what you'll have in the end. No confusing requirements, no wondering if you're doing it right - just you, turning your React knowledge into something familiar. Every component you create, every state update you handle, it's all going to click because, I think we as humanity can all agree on what an "Add Task" button should do.
 
 And the best part?
 
