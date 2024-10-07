@@ -31,6 +31,18 @@ Each component you build will contribute to the final app.
 
 At the end of each chapter you'll learn something **useful and applicable**.
 
+## How this course works?
+
+It's very simple! All you need is a browser (you already have one if you're reading this) and an editor (such as [VSCode](https://code.visualstudio.com)). Then do the following:
+
+1. Select an exercise - preferably start from [0_about_react](/0_about_react)
+1. Read README.md for that exercise. It contains all the React theory you need to know, a quiz and further instructions.
+1. Save the 0_practice.html (or whatever practice you're working on) to your computer
+1. Open 0_practice.html in your editor and follow the instructions
+1. Once done, open 0_practice.html in your browser
+1. Compare your solution against 0_answer.html (or 1_answer, etc, depending on the exercise you're doing)
+1. Do the next exercise
+
 ## Who is this course for?
 
 This course is for people who are interested in Web Technologies and want to build fast web apps with the most popular UI library.
