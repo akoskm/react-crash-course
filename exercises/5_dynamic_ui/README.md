@@ -1,0 +1,68 @@
+# Dynamic UI
+
+In this chapter you'll learn how to create dynamic UIs with React.
+
+# Why it matters?
+
+Front ends are rarely hard coded. Except for texts and input labels, the data they show is coming from the backend. The dropdowns and autocompletes you see are usually based on user-entered values that are saved on the backend.
+
+# Generating UIs using JSX
+
+We already know about the syntax for rendering text inside JSX. You can use `{labelText}` inside your React component to render what's in `labelText`. But `{}` can do a lot more. it can run more advanced JavaScript code - another huge benefit of React and JSX, no magical syntax for loops and building UIs.
+
+# Syntax
+
+In case you have an array of element, such as `['Low', 'Medium', 'High']` a code like this will print all values in the HTML:
+
+```jsx
+<div>
+  {['Low', 'Medium', 'High'].map(priority => {
+    return priority; // 💡 Strings are valid React nodes!
+  })}
+</div>
+```
+
+# Quiz
+
+Knowing the syntax of the HTML `<select>` element, a dropdown for selecting a task priority would look something like this:
+
+```jsx
+<select name="priority">
+  <option value="Low">Low</option>
+  <option value="Medium">Medium</option>
+  <option value="High">High</option>
+</select>
+```
+
+How a React component would look like that generates a select with the same values, using an array as the source of priorities?
+
+<details>
+
+  ```jsx
+  function PriorityDropdown () {
+    return (
+      <select>
+        {['Low', 'Medium', 'High'].map(
+          priority => <option key={priority} value={priority}>{priority}</option>
+        )}
+      </select>
+    );
+  }
+  ```
+
+  👷 I know you're asking, what's `key` all of a sudden?? If you get the rest of it right, you have nothing to worry about. Key is just a special attribute React requires you to use when you render the same elements (`option` in this case) next to each other, programmatically.
+  This way React can keep state updates more efficient.
+
+  💡 In production applications you'll usually have an ID at this point for the elements that you want to programmatically render. Use that ID as key.
+
+  ⚠️ If you don't do this, you get the following error in your React applications:
+  > Warning: Each child in a list should have a unique “key” prop.
+
+  <summary>Show me the answer!</summary>
+</details>
+
+# Exercise
+
+Let’s modify the `FormInput` component from the previous exercise and instead of the text input, render a dropdown with these three priority values.
+
+Open [0_practice.html](0_practice.html).
