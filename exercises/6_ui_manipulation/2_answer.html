@@ -70,13 +70,24 @@
             )
           }
 
-          function TaskFilter({ onFilterChange }) {
-            return
-          }
-
           function Form() {
+            const [tasks, setTasks] = React.useState([
+              'buy milk',
+              'finish chapter 6',
+              'learn React Custom Hooks',
+              'learn testing React apps',
+              'check out Remix.js'
+            ]);
             const [taskName, setTaskName] = React.useState('');
             const [filter, setFilter] = React.useState('');
+
+            React.useEffect(() => {
+              if (!filter) return;
+
+              setTasks((tasks) => tasks.filter((task) =>
+                task.startsWith(filter)
+              ))
+            }, [filter]);
 
             return (
               <>
@@ -84,6 +95,7 @@
                 <PriorityDropdown />
                 <SaveButton />
                 <FormInput labelText="Filter tasks" value={filter} setValue={setFilter} />
+                <TaskList tasks={tasks}/>
               </>
             );
           }

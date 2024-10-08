@@ -60,6 +60,8 @@
               );
           }
 
+          // 👋 I already created a component for you that lists the tasks.
+          // It's based on the same principles like we used to implement the PriorityDropdown.
           function TaskList({ tasks }) {
             return (
               <ul>
@@ -70,13 +72,21 @@
             )
           }
 
-          function TaskFilter({ onFilterChange }) {
-            return
-          }
-
           function Form() {
+            // 👋 I also created a list of tasks for you.
+            const [tasks, setTasks] = React.useState([
+              'buy milk',
+              'finish chapter 6',
+              'learn React Custom Hooks',
+              'learn testing React apps',
+              'check out Remix.js'
+            ]);
             const [taskName, setTaskName] = React.useState('');
             const [filter, setFilter] = React.useState('');
+
+            // 👷 Create a useEffect that runs when "filter" changes.
+            // Inside the useEffect filter tasks that start with "filter"
+            // 💡 use String.starsWith(filter)
 
             return (
               <>
@@ -84,6 +94,7 @@
                 <PriorityDropdown />
                 <SaveButton />
                 <FormInput labelText="Filter tasks" value={filter} setValue={setFilter} />
+                <TaskList tasks={tasks}/>
               </>
             );
           }
