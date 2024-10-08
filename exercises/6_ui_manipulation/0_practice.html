@@ -21,15 +21,22 @@
       <div id="root"></div>
 
       <script type="text/babel">
-          function FormInput({ labelText, value, setValue }) {
+          // 👷 Let's lift this state up into the Form component!
+          // instead of defining a local state inside this component, let's pass value and setValue
+          // to this component: function FormInput({ labelText, value, setValue })
+          function FormInput({ labelText }) {
+            // 👷 Now you can remove this state
+            const [text, setText] = React.useState('');
             return (
               // 💡 components can be style on many ways, this is one of them
               <label style={{ display: 'flex' }}>
                 {labelText}
-                <input type="text" value={value} onChange={(event) => {
-                  setValue(event.target.value);
+                <input type="text" value={text} onChange={(event) => {
+                  // 👷 Make sure you rename setText to setValue
+                  setText(event.target.value);
                 }}/>
-                <span>{value}</span>
+                {/* 👷 Don't forget to change {text} to {value} and go to the Form component!*/}
+                <span>{text}</span>
               </label>
             )
           }
@@ -60,33 +67,20 @@
               );
           }
 
-          function TaskList({ tasks }) {
-            return (
-              <ul>
-                {tasks.map((task) => (
-                  <li key={task}>{task}</li>
-                ))}
-              </ul>
-            )
-          }
-
-          function TaskFilter({ onFilterChange }) {
-            return
-          }
-
           // 💡 Form is called a parent component.
           // FormInput and SaveButton are the child components of Form.
           function Form() {
-            const [taskName, setTaskName] = React.useState('');
-
-            return (
-              <>
-                <FormInput labelText="Task name" value={taskName} setValue={setTaskName} />
-                <PriorityDropdown />
-                <SaveButton />
-                <TaskList tasks={tasks}/>
-              </>
-            );
+              // 👷 Here's where the lifted state will live. Since it's for the name of the task
+              // let's use a more descriptive naming for our state:
+              // const [taskName, setTaskName] = React.useState('');
+              return (
+                  <>
+                    {/* Pass taskName as value and setTaskName as the setValue property to FormInput */}
+                    <FormInput labelText="Task name" />
+                    <PriorityDropdown />
+                    <SaveButton />
+                  </>
+              );
           }
 
           // ☕️ this where React produces your component
