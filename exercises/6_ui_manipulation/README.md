@@ -6,9 +6,43 @@ In this chapter you'll learn how to manipulate the UI in JSX, show and hide cert
 
 Believe it or not, for most web apps, an autocomplete or a filter-list is as complicated as a UI gets. Learning a few patterns is enough to understand most web applications—whether it's an autocomplete, some other UI filter, or a dynamic table.
 
-# Syntax
+# [useEffect](https://react.dev/reference/react/useEffect)
 
-No special syntax need here! We already learned that JSX is capable of running plan JavaScript. Let's jump into the quiz!
+## Syntax
+
+```jsx
+useEffect(() => {
+  // side effect
+}, [ /* dependencies */])
+```
+
+The other frequently used built-in hook besides `useState` is `useEffect`. Think of `useEffect` as an if-then, instead of a lifecycle function.
+
+`useEffect` runs when the values inside it's dependency array change.
+
+So, for example, if I have a state variable called `taskName` and I want `useEffect` to print `taskName` to the console every time it changes, I'd write the following `useEffect`:
+
+```jsx
+useEffect(() => {
+  console.log(taskName);
+}, [taskName])
+```
+
+And if I were typing buy milk in the input, the console would should this:
+```
+b
+bu
+buy
+buy
+buy m
+buy mi
+buy mil
+buy milk
+```
+
+We'll use this to display a filtered list of tasks to the user. No other JSX syntax is needed!
+
+Let's jump into the quiz!
 
 # Quiz
 
