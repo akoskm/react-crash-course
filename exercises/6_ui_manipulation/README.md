@@ -4,7 +4,7 @@ In this chapter you'll learn how to manipulate the UI in JSX, show and hide cert
 
 # Why it matters?
 
-Believe it or not, for most web apps, an autocomplete is as complicated as a UI gets. Learning a few patterns is enough to understand most web applications—whether it's an autocomplete, some other UI filter, or a dynamic table.
+Believe it or not, for most web apps, an autocomplete or a filter-list is as complicated as a UI gets. Learning a few patterns is enough to understand most web applications—whether it's an autocomplete, some other UI filter, or a dynamic table.
 
 # Syntax
 
@@ -53,3 +53,11 @@ array
 
   <summary>Show me the answer!</summary>
 </details>
+
+# Exercise
+
+In this exercise, we'll build a filter component. I'll give you a list of tasks, and using a FormInput, you'll display only the tasks that begin with the text the user enters.
+
+To achieve this, while reusing our existing component, we'll also introduce a new concept: lifting state up. In React, lifting state up means moving state from a child component to a parent component to share state between components.
+
+Open [0_practice.html](0_practice.html).

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Simple React Button with JSX</title>
+      <!-- ☕️
+        In this example, React is loaded directly from a CDN using script tags.
+        This approach is used for simplicity in this course, but in a real-world project,
+        you would typically install React and its dependencies using npm or yarn.
+      -->
+      <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+      <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <!-- EOF ☕️ -->
+  </head>
+  <body>
+      <!-- ☕️
+      Yep, it's an empty div in the beginning.
+      React renders everything it produces inside this div.
+      This is similar to what happens in real-world projects.
+      -->
+      <div id="root"></div>
+
+      <script type="text/babel">
+          function FormInput({ labelText, value, setValue }) {
+            return (
+              // 💡 components can be style on many ways, this is one of them
+              <label style={{ display: 'flex' }}>
+                {labelText}
+                <input type="text" value={value} onChange={(event) => {
+                  setValue(event.target.value);
+                }}/>
+                <span>{value}</span>
+              </label>
+            )
+          }
+
+          function PriorityDropdown() {
+            const [selected, setSelected] = React.useState('Medium');
+            return (
+              <label style={{ display: 'flex' }}>
+                Task priority
+                <select value={selected} onChange={(event) => {
+                  setSelected(event.target.value);
+                }}>
+                  {['Low', 'Medium', 'High'].map(
+                    priority => <option key={priority} value={priority}>{priority}</option>
+                  )}
+                </select>
+              </label>
+            )
+          }
+
+          function SaveButton() {
+              return (
+                  <button onClick={(event) => {
+                    alert(`${event.target.type} Button clicked!`);
+                  }}>
+                      Save
+                  </button>
+              );
+          }
+
+          function TaskList({ tasks }) {
+            return (
+              <ul>
+                {tasks.map((task) => (
+                  <li key={task}>{task}</li>
+                ))}
+              </ul>
+            )
+          }
+
+          function TaskFilter({ onFilterChange }) {
+            return
+          }
+
+          // 💡 Form is called a parent component.
+          // FormInput and SaveButton are the child components of Form.
+          function Form() {
+            const [tasks, setTasks] = React.useState([
+              'buy milk',
+              'finish chapter 6',
+              'learn React Custom Hooks',
+              'learn testing React apps',
+              'check out Remix.js'
+            ]);
+            const [taskName, setTaskName] = React.useState('');
+
+            return (
+              <>
+                <FormInput labelText="Task name" value={taskName} setValue={setTaskName} />
+                <PriorityDropdown />
+                <SaveButton />
+                <TaskList tasks={tasks}/>
+              </>
+            );
+          }
+
+          // ☕️ this where React produces your component
+          ReactDOM.render(<Form />, document.getElementById('root'));
+      </script>
+  </body>
+</html>
