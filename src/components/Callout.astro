@@ -1,0 +1,32 @@
+---
+const { variant, title } = Astro.props;
+
+type Variant = "info" | "warning" | "danger" | "success";
+
+const variantIcons: Record<Variant, string> = {
+  info: '💁',
+  warning: '⚠️',
+  danger: '⛔️',
+  success: '✅',
+};
+
+const variantClasses: Record<string, string> = {
+  info: "border-Blue bg-Blue text-background hover:bg-Blue cursor-default",
+  warning: "border-Orange bg-Orange text-background hover:bg-Orange cursor-default",
+  danger: "border-Red bg-Red text-background hover:bg-Red cursor-default",
+  success: "border-Green bg-Green text-background hover:bg-Green cursor-default",
+};
+
+const validVariant = variant && variantClasses[variant] ? variant : "info";
+
+const Icon = variantIcons[validVariant as Variant];
+
+---
+
+<div class={`callout p-4 ${variantClasses[variant]} border-2`} role="alert">
+  <div class="flex gap-2">
+    {Icon}
+    <p class="font-bold">{title}</p>
+  </div>
+  <slot />
+</div>

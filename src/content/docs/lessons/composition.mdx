@@ -1,0 +1,51 @@
+---
+title: Composition
+---
+import Callout from "@/components/Callout.astro";
+
+In this exercise you'll learn to compose a UI from multiple components.
+
+# Why it matters?
+
+The true power of React comes from being able to combine many components, such as the `SaveButton` you created earlier, into a bigger component, such as a form.
+
+# The Form Input component
+
+Knowing the basic building blocks of a format input, such as `<label>` and `<input type="text">`, we'll build a form input component we can reuse in our Todo app.
+
+But first let's take a short quiz!
+
+# Quiz
+
+How a React component would look like for a form input that contains the label "Task name" and a text input?
+
+<details>
+
+  ```jsx
+  function FormInput () {
+    return (
+      <label>
+        Task name
+        <input type="text">
+      </label>
+    );
+  }
+  ```
+  <summary>Show me the answer!</summary>
+</details>
+
+# Exercise
+
+<iframe src="https://codesandbox.io/embed/mxt22p?view=editor+%2B+preview&module=%2Fsrc%2FApp.js&previewwindow=tests"
+  style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="Exercise 3 - Composition"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+<Callout variant="info" title="Render result">
+React components must return a valid React element.
+
+If you want to return multiple elements, they must be wrapped in an enclosing tag
+like a <div></div> or a JSX fragment <></>
+</Callout>

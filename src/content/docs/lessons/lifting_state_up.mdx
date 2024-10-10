@@ -1,0 +1,76 @@
+---
+title: Lifting State Up
+---
+
+This chapter will show you an important concept in React: lifting state up.
+
+# Why it matters?
+
+Components don't exist in a vacuum. It's not the just users who interact with them but also other components that react to their changes. Filtering is a great example of this:
+
+you type stuff into one input, while a component showing a list of thing updates. This is only possible if the state that captures what you've typed is also accessible to the component doing the filtering.
+
+There are a couple of ways to achieve this in React, but the simplest thing to do for component that are sitting next to each other, is lifting the state up.
+
+# Syntax
+
+We already saw that we can pass things such as `labelName` to our `FormInput` component. We can also pass in other values and functions.
+
+Here's the idea.
+
+Right now form is sitting inside FormInput and nobody outside of FormInput has access to it:
+
+```jsx
+function FormInput() {
+  const [value, setValue] = useState('');
+  return (
+    <input
+      onChange={(e) => setValue(e.target.value)}
+      value={value}
+    />
+  );
+}
+
+function Form() {
+  return (
+    <div>
+      <FormInput />
+      <Filter filterText={value}/> {/* value is not defined 😥 */}
+    </div>
+  );
+}
+```
+
+But it's needed by the filter component, so what can we do? We can move the state into Form and pass in value and setValue to FormInput as props.
+
+```jsx
+function FormInput({ value, setValue }) {
+  return (
+    <input
+      onChange={(e) => setValue(e.target.value)}
+      value={value}
+    />
+  );
+}
+
+function Form() {
+  const [value, setValue] = useState('');
+  return (
+    <div>
+      <FormInput value={value} setValue={setValue}/>
+      <Filter filterText={value}/> {/* value is there! 😃 */}
+    </div>
+  );
+}
+```
+
+# Exercise
+
+Let's lift the state up in this exercise!
+
+<iframe src="https://codesandbox.io/embed/zvqctt?view=editor+%2B+preview&module=%2Fsrc%2FApp.js&previewwindow=tests"
+  style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="Exercise 7 - Lifting State Up"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
