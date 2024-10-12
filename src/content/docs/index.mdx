@@ -22,16 +22,22 @@ hero:
       link: /lessons/about-react/
       icon: right-arrow
 ---
-
+import Intro from './Intro.md';
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+<Intro />
 
 <CardGrid stagger>
 	<Card title="Pick a Lesson" icon="puzzle">
-		Click Start Learning or use Search
+		[Start Learning](/lessons/about-react/) or use the Search
 	</Card>
 	<Card title="Add new content" icon="github">
     Would like to contribute? Check out the [GitHub repo](https://github.com/akoskm/react-crash-course)!
 	</Card>
 </CardGrid>
+
+<footer>
+  <div class="text-center">
+    Made by <a href="https://github.com/akoskm">@akoskm</a>
+  </div>
+</footer>

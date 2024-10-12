@@ -1,4 +1,6 @@
-# Start here 👉 [exercises](exercises)
+---
+title: Intro
+---
 
 # 🧑‍🏫 Motivation
 
@@ -82,3 +84,4 @@ A handful of emojis will guide you through this journey! Whenever you see one of
 ⚠️ - common mistakes
 
 💡 - helpful information, best practices, recommendations
+
